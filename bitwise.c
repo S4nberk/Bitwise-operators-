@@ -1,60 +1,60 @@
 #include <stdio.h>
 
-	int main() {
-		int x, y, z;
-		x = 4;  //00000100
-		y = 13; //00001101
-		z = 7;  //00000111
+int main() {
+    int x, y, z;
 
-		printf("Initial situation : x = %d , y = %d, z = %d \n", x, y, z);
+    // Initial values 
+    x = 4;   // 00000100
+    y = 13;  // 00001101
+    z = 7;   // 00000111
 
-		// & = AND
-		x = y & z;
-		/*
-		00001101
-	 	00000111
-	    --------
-	    00000101 = 5
-		*/ 
-		printf("After x = y & z : x = %d \n", x);
+    // Print initial state
+    printf("Initial situation: x = %d, y = %d, z = %d\n", x, y, z);
 
-		// | = OR
-		x = y | z;
-		/*
-		00001101
-	 	00000111
-	    --------
-	    00001111 = 15
-		*/
-		printf("After x = y | z : x = %d \n", x);
+    // -----------------------------
+    // Bitwise AND (&)
+    // 00001101 (y)
+    // 00000111 (z)
+    // --------
+    // 00000101 = 5
+    x = y & z;
+    printf("After x = y & z: x = %d\n", x);
 
-		// ^ = XOR
-		x = y ^ z;
-		/*
-		00001101
-		00000111
-	    --------
-		00001010 = 10
-		*/
-		printf("After x = y ^ z : x = %d \n", x);
+    // -----------------------------
+    // Bitwise OR (|)
+    // 00001101 (y)
+    // 00000111 (z)
+    // --------
+    // 00001111 = 15
+    x = y | z;
+    printf("After x = y | z: x = %d\n", x);
 
-		// << = SHIFT LEFT
-		x = 4 << 1;
-		/*
-		00000100
-	    --------
-	    00001000 = 8
-		*/
-		printf("After x = x << 1 : x = %d \n", x);
+    // -----------------------------
+    // Bitwise XOR (^)
+    // 00001101 (y)
+    // 00000111 (z)
+    // --------
+    // 00001010 = 10
+    x = y ^ z;
+    printf("After x = y ^ z: x = %d\n", x);
 
-		// >> = SHIFT LEFT
-		x = 4 >> 1;
-		/*
-		00000100
-		--------
-		00000010 = 2
-		*/
-		printf("After x = x >> 1 : x = %d \n", x);
+    // -----------------------------
+    // Bitwise Shift Left (<<)
+    // 00000100 (4)
+    // << 1
+    // --------
+    // 00001000 = 8
+    x = 4 << 1;
+    printf("After x = 4 << 1: x = %d\n", x);
 
-	return 0;
+    // -----------------------------
+    // Bitwise Shift Right (>>)
+    // 00000100 (4)
+    // >> 1
+    // --------
+    // 00000010 = 2
+    x = 4 >> 1;
+    printf("After x = 4 >> 1: x = %d\n", x);
+
+    return 0;
 }
