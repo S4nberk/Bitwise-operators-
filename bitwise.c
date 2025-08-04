@@ -56,6 +56,5 @@
 		*/
 		printf("After x = x >> 1 : x = %d \n", x);
 
-
 	return 0;
 }
